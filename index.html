@@ -1,0 +1,26 @@
+<style>
+    .person{
+        border: 1px solid black;
+        display: inline-block;
+        margin: 1rem;
+        padding: 1rem;
+    }
+</style>
+<body><div id="output"></div></body>
+<script>
+//WE USE STRINGS INSTEAD OF DOM CREATE ELEMENT FOR PERFORMANCE REASONS
+data = [
+    { name:"Jesse", id: 111},
+    { name:"Kevin", id: 222},
+    { name:"Nina", id: 333},
+]
+// VANILLA COMPONENT
+function person(p){
+    return `<div class="person">
+        <div class="id">${p.id}</div>
+        <div class="name">${p.name}</div>
+        </div>`
+}
+//APPLY COMPONENT
+output.innerHTML = data.map(p=>person(p)).join("")
+</script>
